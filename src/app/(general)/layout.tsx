@@ -1,4 +1,5 @@
 import NavBar from "../Componentes/NavBar";
+import ProviderPresupuesto from "../Provider/ProviderPresupuesto";
 
 export default function MainLayout({
   children
@@ -7,7 +8,10 @@ export default function MainLayout({
 }) {
   return (
     <div>
-        <NavBar></NavBar>
+        
+        <ProviderPresupuesto>
+            <NavBar></NavBar>
+        </ProviderPresupuesto>
         {children}
     </div>
   );

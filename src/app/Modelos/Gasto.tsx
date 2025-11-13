@@ -3,4 +3,5 @@ export interface Gasto{
     categoria:string
     monto:number
     fecha:Date
+    descripcion?:string
 }

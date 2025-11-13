@@ -1,3 +1,3 @@
 export interface Presupuesto{
-    presupuesto:number
+    monto:number
 }

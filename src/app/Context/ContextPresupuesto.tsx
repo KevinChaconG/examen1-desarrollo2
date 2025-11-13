@@ -1,9 +1,13 @@
 import { createContext } from "react";
 import { Gasto } from "../Modelos/Gasto";
+import { Presupuesto } from "../Modelos/Presupuesto";
 
-export const contextPresupuesto=createContext({
-    gasto:[] as Gasto[],
-    registroGasto: [] as Gasto[],
-    cargarGastos:()=>{}
+export interface ContextPresupuestoType {
+  presupuesto: Presupuesto | null;
+  guardarPresupuesto: (presupuesto: Presupuesto) => void;
+}
 
-})
+export const contextPresupuesto = createContext<ContextPresupuestoType>({
+  presupuesto: null,
+  guardarPresupuesto: () => {},
+});

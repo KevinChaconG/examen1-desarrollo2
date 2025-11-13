@@ -3,7 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { PlantillaReact } from '../Modelos/PlantillaReact'
 import { Gasto } from '../Modelos/Gasto'
-import { contextPresupuesto } from '../Context/ContextPresupuesto'
+import { ContextGastos } from '../Context/ContextGastos'
 
 export default function ProviderGastos({children}:PlantillaReact) {
 
@@ -62,13 +62,14 @@ export default function ProviderGastos({children}:PlantillaReact) {
 
   return (
 
-    <contextPresupuesto.Provider value={{gasto, cargarGastos,registroGasto}}>
+    <ContextGastos.Provider value={{gasto, cargarGastos,registroGasto}}>
         {children}
-    </contextPresupuesto.Provider>
+    </ContextGastos.Provider>
+    
 
   )
 }
 
 export function useContextPresupuesto(){
-    return useContext(contextPresupuesto)
+    return useContext(ContextGastos)
 }
